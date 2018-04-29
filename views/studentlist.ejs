@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mongo Bongo</h1>
+    <ul>
+    <% studentlist.forEach(function(studentlist){ %>
+        <form action="/sletstuderende" method="post">
+            <input type="hidden" name="studentId" value="<%= studentlist._id %>">
+            <li><%= studentlist.student %> - <%= studentlist.street %> <input type="submit" value="slet"></li>
+        </form>
+        <br>
+    <% }); %>
+    </ul>
+    <p><a href="/nystuderende">Indsæt studerende</a></p>
+</body>
+</html>
